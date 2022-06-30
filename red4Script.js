@@ -226,7 +226,7 @@ function informe(clases, fecha) {
       crearFila(tabla, clases, fecha, "Pre Exámen - Repaso de todo el curso");
       break;
     case 48:
-      crearFilaQA(tabla, clases, fecha, "Exámen Final", " ", 1);
+      crearFilaQA(tabla, clases, fecha, "Exámen Final", "Final", 1);
       break;
     default:
       break;
