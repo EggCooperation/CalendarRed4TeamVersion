@@ -21,27 +21,29 @@ function calcular(inicio) {
     }
     finCurso.setDate(finCurso.getDate() + 1);
   }
+  addModulo();
 }
 
 function informe(clases, fecha) {
   var tabla = document.getElementById("eventos");
+
   switch (clases) {
     //Módulo 1
     case 1:
-      crearFila(tabla, clases, fecha, "M1 - T1 - Introducción a QC-QA");
+      crearFilaQA(tabla, clases, fecha, "T1 - Introducción a QC-QA", "M 1", 6);
       break;
     case 2:
-      crearFila(tabla, clases, fecha, "M1 - T2 - Desarrollo de software 1");
+      crearFila(tabla, clases, fecha, "T2 - Desarrollo de software 1");
       break;
     case 3:
-      crearFila(tabla, clases, fecha, "M1 - T3 - Desarrollo de software 2");
+      crearFila(tabla, clases, fecha, "T3 - Desarrollo de software 2");
       break;
     case 4:
       crearFila(
         tabla,
         clases,
         fecha,
-        "M1 - T4 - ¿Qué es el testing? Necesidad de las pruebas"
+        "T4 - ¿Qué es el testing? Necesidad de las pruebas"
       );
       break;
     case 5:
@@ -49,19 +51,19 @@ function informe(clases, fecha) {
         tabla,
         clases,
         fecha,
-        "M1 - Extra - Herramientas de Observación"
+        "Extra - Herramientas de Observación"
       );
       break;
     case 6:
-      crearFila(tabla, clases, fecha, "M1 - Integrador + Día desafíos");
+      crearFila(tabla, clases, fecha, "Integrador + Día desafíos");
       break;
     //Módulo 2
     case 7:
-      crearFila(
+      crearFilaQA(
         tabla,
         clases,
         fecha,
-        "M2 - T5 - Principios y ciclo de vida de testing 1<br>7 pp de las pruebas. Severidad vs Gravedad"
+        "T5 - Principios y ciclo de vida de testing 1<br>7 pp de las pruebas. Severidad vs Gravedad", "M 2", 12
       );
       break;
     case 8:
@@ -69,7 +71,7 @@ function informe(clases, fecha) {
         tabla,
         clases,
         fecha,
-        "M2 - T6 - Principios y ciclo de vida de testing 2<br>Ciclo vs Ciclo. Sólo nombramos las etapas. Entregables."
+        "T6 - Principios y ciclo de vida de testing 2<br>Ciclo vs Ciclo. Sólo nombramos las etapas. Entregables."
       );
       break;
     case 9:
@@ -77,7 +79,7 @@ function informe(clases, fecha) {
         tabla,
         clases,
         fecha,
-        "M2 - T7 - Plan de Prueba 1<br>Analisis de requrimientos"
+        "T7 - Plan de Prueba 1<br>Analisis de requrimientos"
       );
       break;
     case 10:
@@ -85,40 +87,40 @@ function informe(clases, fecha) {
         tabla,
         clases,
         fecha,
-        "M2 - T8 - Plan de Prueba 2<br>Planificación y diseño de pruebas"
+        "T8 - Plan de Prueba 2<br>Planificación y diseño de pruebas"
       );
       break;
     case 11:
-      crearFila(tabla, clases, fecha, "M2 - T9 - Historia de usuario");
+      crearFila(tabla, clases, fecha, "T9 - Historia de usuario");
       break;
     case 12:
-      crearFila(tabla, clases, fecha, "M2 - T10 - Casos de prueba 1");
+      crearFila(tabla, clases, fecha, "T10 - Casos de prueba 1");
       break;
     case 13:
-      crearFila(tabla, clases, fecha, "M2 - T11 - Casos de prueba 2");
+      crearFila(tabla, clases, fecha, "T11 - Casos de prueba 2");
       break;
     case 14:
-      crearFila(tabla, clases, fecha, "M2 - Día desafíos");
+      crearFila(tabla, clases, fecha, "Día desafíos");
       break;
     case 15:
-      crearFila(tabla, clases, fecha, "M2 - T12 - Metodologías - Kanvan");
+      crearFila(tabla, clases, fecha, "T12 - Metodologías - Kanvan");
       break;
     case 16:
-      crearFila(tabla, clases, fecha, "M2 - T13 - Metodologías - Scrum");
+      crearFila(tabla, clases, fecha, "T13 - Metodologías - Scrum");
       break;
     case 17:
-      crearFila(tabla, clases, fecha, "M2 - T14 - Testing Agil");
+      crearFila(tabla, clases, fecha, "T14 - Testing Agil");
       break;
     case 18:
-      crearFila(tabla, clases, fecha, "M2 - Integrador + Día desafíos");
+      crearFila(tabla, clases, fecha, "Integrador + Día desafíos");
       break;
     //Módulo 3
     case 19:
-      crearFila(
+      crearFilaQA(
         tabla,
         clases,
         fecha,
-        "M3 - T15 - Herramientas para gestión de pruebas<br>Trello"
+        "T15 - Herramientas para gestión de pruebas<br>Trello", "M 3", 13
       );
       break;
     case 20:
@@ -126,7 +128,7 @@ function informe(clases, fecha) {
         tabla,
         clases,
         fecha,
-        "M3 - T16 - Herramientas para gestión de pruebas<br>Test-link"
+        "T16 - Herramientas para gestión de pruebas<br>Test-link"
       );
       break;
     case 21:
@@ -134,151 +136,97 @@ function informe(clases, fecha) {
         tabla,
         clases,
         fecha,
-        "M3 - T16 - Herramientas para gestión de pruebas"
+        "T16 - Herramientas para gestión de pruebas"
       );
       break;
     case 22:
-      crearFila(tabla, clases, fecha, "M3 - T17 - Ejecución de las pruebas");
+      crearFila(tabla, clases, fecha, "T17 - Ejecución de las pruebas");
       break;
     case 23:
-      crearFila(tabla, clases, fecha, "M3 - T17 - Ejecución de las pruebas");
+      crearFila(tabla, clases, fecha, "T17 - Ejecución de las pruebas");
       break;
     case 24:
-      crearFila(tabla, clases, fecha, "M3 - T17 - Ejecución de las pruebas");
+      crearFila(tabla, clases, fecha, "T17 - Ejecución de las pruebas");
       break;
     case 25:
-      crearFila(tabla, clases, fecha, "M3 - T18 - Reporte de errores");
+      crearFila(tabla, clases, fecha, "T18 - Reporte de errores");
       break;
     case 26:
-      crearFila(tabla, clases, fecha, "M3 - T18 - Reporte de errores");
+      crearFila(tabla, clases, fecha, "T18 - Reporte de errores");
       break;
     case 27:
-      crearFila(tabla, clases, fecha, "M3 - Día de Desafios");
+      crearFila(tabla, clases, fecha, "Día de Desafios");
       break;
     case 28:
-      crearFila(tabla, clases, fecha, "M3 - T19 - Testing mobile");
+      crearFila(tabla, clases, fecha, "T19 - Testing mobile");
       break;
     case 29:
-      crearFila(tabla, clases, fecha, "M3 - T19 - Testing mobile");
+      crearFila(tabla, clases, fecha, "T19 - Testing mobile");
       break;
     case 30:
-      crearFila(tabla, clases, fecha, "M3 - T20 - Ambiente de prueba");
+      crearFila(tabla, clases, fecha, "T20 - Ambiente de prueba");
       break;
     case 31:
-      crearFila(tabla, clases, fecha, "M3 - Integrador + Día desafíos");
+      crearFila(tabla, clases, fecha, "Integrador + Día desafíos");
       break;
-
-    default:
+    //Módulo 4
+    case 32:
+      crearFilaQA(tabla, clases, fecha, "T21 - Niveles de pruebas", "M 4", 8);
       break;
-  }
-}
-
-function informeClient(clases, fecha) {
-  //agregando las columnas
-  let tabla = document.getElementById("eventos");
-
-  //agregar las filas
-  switch (clases) {
-    case 1:
-      crearFilaClientVersion(
+    case 33:
+      crearFila(tabla, clases, fecha, "T22 - Tipos de pruebas");
+      break;
+    case 34:
+      crearFila(tabla, clases, fecha, "T22 - Tipos de pruebas");
+      break;
+    case 35:
+      crearFila(tabla, clases, fecha, "T22 - Tipos de pruebas");
+      break;
+    case 36:
+      crearFila(tabla, clases, fecha, "T23 - Técnicas de pruebas");
+      break;
+    case 37:
+      crearFila(tabla, clases, fecha, "T23 - Técnicas de pruebas");
+      break;
+    case 38:
+      crearFila(tabla, clases, fecha, "T24 - Usabilidad");
+      break;
+    case 39:
+      crearFila(tabla, clases, fecha, "Integrador + Día desafíos");
+      break;
+    //Módulo 5
+    case 40:
+      crearFilaQA(tabla, clases, fecha, "T25 - Equipo de prueba", "M 5", 4);
+      break;
+    case 41:
+      crearFila(
         tabla,
         clases,
         fecha,
-        "OnBoarding",
-        "D_1: ok",
-        "Firmar Términos y Condiciones esté marcada como realizada <br> ¿Comprendiste los 3 pasos para acceder a tu clase?"
+        "T26 - Planificación de prueba (estimacion de esfuerzo)"
       );
       break;
-    case 2:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Guía 1",
-        "Día 2: D_2: ok",
-        "Firmar Términos y Condiciones esté marcada como realizada <br> ¿Comprendiste los 3 pasos para acceder a tu clase?"
-      );
+    case 42:
+      crearFila(tabla, clases, fecha, "T27 - Base de datos");
       break;
-    case 4:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Guía 2.1",
-        "Modulo1_Guia2.1_PSeInt: ok",
-        "La actividad 1 - ¿Pudiste resolver todos los ejercicios fundamentales de la Guía 1 PSeInt? esté marcada como realizada <br> La actividad 1. ¿Lograste los objetivos de la Guía? esté marcada como realizada <br> Firmar los Términos y Condiciones esté marcada como realizada"
-      );
+    case 43:
+      crearFila(tabla, clases, fecha, "Integrador + Día desafíos");
       break;
-    case 7:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Guía 2.2",
-        "Modulo1_Guia2.2_PSeInt: ok",
-        "2.1 - ¿Pudiste resolver todos los ejercicios fundamentales de esta guía? esté marcada como realizada <br> Firmar los Términos y Condiciones esté marcada como realizada"
-      );
+    //Módulo Pre Exámen
+    case 44:
+      crearFilaQA(tabla, clases, fecha, "Pre Exámen - Repaso de todo el curso", "Pre Exámen", 4);
       break;
-    case 11:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Repaso Guía 2",
-        "Modulo1_Guia2_RepasoPSeInt: ok",
-        "Firmar los Términos y Condiciones esté marcada como realizada"
-      );
+    case 45:
+      crearFila(tabla, clases, fecha, "Pre Exámen - Repaso de todo el curso");
       break;
-    case 12:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Guía 3",
-        "Modulo1_Guia3_PSeInt: ok",
-        "2.2 - ¿Pudiste resolver todos los ejercicios fundamentales de esta guía? esté marcada como realizada <br> 2. ¿Lograste los objetivos de la Guía? esté marcada como realizada <br> Firmar los Términos y Condiciones esté marcada como realizada"
-      );
+    case 46:
+      crearFila(tabla, clases, fecha, "Pre Exámen - Repaso de todo el curso");
       break;
-    case 17:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Repaso Guía 3",
-        "Modulo1_Guia3_RepasoPSeInt: ok",
-        ""
-      );
+    case 47:
+      crearFila(tabla, clases, fecha, "Pre Exámen - Repaso de todo el curso");
       break;
-    case 18:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Guía 4",
-        "Modulo1_Guia4_PSeInt: ok",
-        "3 - ¿Pudiste resolver todos los ejercicios fundamentales de esta guía? esté marcada como realizada <br> 3. ¿Lograste los objetivos de la Guía? esté marcada como realizada"
-      );
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Contenido Plus: ¿Cómo utilizar correctamente Google?",
-        "Modulo1_Guia4_PSeInt: ok",
-        ""
-      );
-      break;
-    case 26:
-      crearFilaClientVersion(
-        tabla,
-        clases,
-        fecha,
-        "Repaso Arreglos",
-        "Modulo1_Guia4_RepasoPSeInt: ok",
-        ""
-      );
-      break;
-    case 27:
-      crearFilaClientVersion(tabla, clases, fecha, "Integrador PseInt", "", "");
+    case 48:
+      crearFilaQA(tabla, clases, fecha, "Exámen Final", " ", 1);
       break;
     default:
       break;
@@ -286,7 +234,7 @@ function informeClient(clases, fecha) {
 }
 
 function informeResumido(clases, fecha) {
-  if (clases == 27) {
+  if (clases == 48) {
     document.getElementById(
       "informeResumido"
     ).textContent = `Tu fecha de Exámen Final es el: `;
@@ -297,4 +245,48 @@ function informeResumido(clases, fecha) {
       "15px 0px 7px 0px";
     document.getElementById("dateFinal").style.padding = "0px 0px 7px 0px";
   }
+}
+
+function addModulo() {
+  let tabla = document.getElementById("eventos");
+  let encabezado = document.getElementById("table-header");
+  let th4 = document.createElement("th");
+  encabezado.append(th4);
+  th4.appendChild(document.createTextNode("Módulo"));
+  th4.style.backgroundColor = "#ffcb00";
+  th4.scope = "col";
+}
+
+function crearFilaQA(tabla, clases, fecha, contenido, modulo, span) {
+  var dia = fecha.getDate();
+  var mes = fecha.getMonth()+1;
+  var anio = fecha.getFullYear();
+  var row = tabla.insertRow(-1);
+  var celda1 = row.insertCell(0);
+  var celda2 = row.insertCell(1);
+  var celda3 = row.insertCell(2);
+  var celda4 = row.insertCell(3);
+  celda1.innerHTML = clases;
+  celda2.innerHTML = dia + '/' + mes + '/' + anio;
+  celda3.innerHTML = contenido;
+  celda4.innerHTML = modulo;
+  celda4.rowSpan = span;
+  if (celda4.textContent == 'M 2' || celda4.textContent == 'M 4' || celda4.textContent == 'Pre Exámen') {
+    celda4.style.backgroundColor = "#F0F1F4";
+  } else {
+    celda4.style.backgroundColor = "white";
+  }
+}
+
+function crearFila(tabla, clases, fecha, contenido) {
+  var dia = fecha.getDate();
+  var mes = fecha.getMonth()+1;
+  var anio = fecha.getFullYear();
+  var row = tabla.insertRow(-1);
+  var celda1 = row.insertCell(0);
+  var celda2 = row.insertCell(1);
+  var celda3 = row.insertCell(2);
+  celda1.innerHTML = clases;
+  celda2.innerHTML = dia + '/' + mes + '/' + anio;
+  celda3.innerHTML = contenido;
 }
