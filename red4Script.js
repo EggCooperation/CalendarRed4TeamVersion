@@ -21,7 +21,7 @@ function calcular(inicio) {
     }
     finCurso.setDate(finCurso.getDate() + 1);
   }
-  addModulo();
+  titulos();
 }
 
 function informe(clases, fecha) {
@@ -247,14 +247,18 @@ function informeResumido(clases, fecha) {
   }
 }
 
-function addModulo() {
+function titulos() {
   let tabla = document.getElementById("eventos");
   let encabezado = document.getElementById("table-header");
   let th4 = document.createElement("th");
   encabezado.append(th4);
-  th4.appendChild(document.createTextNode("Módulo"));
   th4.style.backgroundColor = "#ffcb00";
   th4.scope = "col";
+  let titulos = document.getElementsByTagName('th')
+  titulos[0].textContent = 'Módulo';
+  titulos[1].textContent = 'Día';
+  titulos[2].textContent = 'Fecha';
+  titulos[3].textContent = 'Contenido';
 }
 
 function crearFilaQA(tabla, clases, fecha, contenido, modulo, span) {
@@ -262,10 +266,10 @@ function crearFilaQA(tabla, clases, fecha, contenido, modulo, span) {
   var mes = fecha.getMonth()+1;
   var anio = fecha.getFullYear();
   var row = tabla.insertRow(-1);
-  var celda1 = row.insertCell(0);
-  var celda2 = row.insertCell(1);
-  var celda3 = row.insertCell(2);
-  var celda4 = row.insertCell(3);
+  var celda4 = row.insertCell(0);
+  var celda1 = row.insertCell(1);
+  var celda2 = row.insertCell(2);
+  var celda3 = row.insertCell(3);
   celda1.innerHTML = clases;
   celda2.innerHTML = dia + '/' + mes + '/' + anio;
   celda3.innerHTML = contenido;
